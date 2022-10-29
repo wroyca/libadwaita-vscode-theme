@@ -1,0 +1,160 @@
+/* Remove unsuitable color from the title bar */
+#workbench\.parts\.titlebar 
+{
+  background-color: unset !important;
+}
+
+/* 
+README: 
+These settings reproduce the inlining from Mac on Linux and Windows. 
+
+Unfortunately, the code contains automatic calculations that add a padding at 
+the bottom of the page, so this is disabled by default. We need to find 
+a way around it. 
+
+#workbench\.parts\.titlebar 
+{
+  display:     none;                      } 
+  body                                    {  
+  position:    fixed;
+  height:      50px;
+  transform:   scale(1, 1.05) !important; }
+  body > div                              {
+  margin-top: -30px !important;
+}
+*/
+
+/* Hide breadcrumb even if the user has not done so in the settings */
+#workbench\.parts\.editor > 
+  div.content > 
+  div.grid-view-container > 
+  div >
+  div > 
+  div > 
+  div.monaco-scrollable-element > 
+  div.split-view-container > 
+  div > 
+  div > 
+  div.title.tabs.show-file-icons > 
+  div.tabs-breadcrumbs 
+{
+    display: none !important;
+}
+
+/* Central alignment for tabs in the tab container  */
+.tabs 
+{
+  display:         flex   !important;
+  justify-content: left   !important;
+  align-items:     center !important;
+  width:           auto   !important;
+  height:          50px   !important; 
+}
+
+/* Border radius for tabs. For practical reasons we do not extend them to the maximum width as libadwaita does.  */
+.tabs-container > .tab 
+{
+  width:         100vh        !important;
+  max-width:     fit-content  !important;
+  border-radius: 5px          !important;
+  margin-left:   10px         !important;
+}
+
+/* hides buttons from the tab container. */
+.editor-actions 
+{
+  display: none !important;
+}
+
+/* hides buttons from the tree explorer. */
+.title-actions
+{
+  display: none !important;
+}  
+
+/* Adds a border radius to the scrollbars. */
+.monaco-scrollable-element .scrollbar.vertical .slider    
+{
+  width:          5px !important;
+  margin-left:    5px !important;                          }
+ 
+ .monaco-scrollable-element .scrollbar.horizontal          {
+  margin-bottom: -5px !important;                          }
+ 
+ .monaco-scrollable-element .scrollbar.horizontal .slider  {
+  height:         5px !important;                          }
+
+ .monaco-scrollable-element .scrollbar>.slider             {
+  border-radius:  5px !important;                               
+}
+
+/* Adds a border radius to the explorer selection */
+div.explorer-viewlet div.pane-body {
+  padding-left:  10px !important; 
+  padding-right: 10px !important;  }
+ .monaco-list-row                  {
+  border-radius: 5px  !important;
+}
+
+/*
+ * Center and add a border radius to widgets
+ */
+
+div.quick-input-widget
+{
+  margin-top:       10%         !important; 
+  border:           0px solid; 
+  border-radius:    10px        !important;                                   }
+  div.quick-input-widget .quick-input-list                                    {
+  padding-left:     10px        !important; 
+  padding-right:    10px        !important;                                   }
+  div.quick-input-widget .quick-input-header                                  {
+  padding:          6px         !important; 
+  border-bottom:    0px solid   !important;                                   }
+  div.quick-input-widget .quick-input-header .monaco-inputbox                 {
+  padding-left:     8px         !important; 
+  outline:          none        !important; 
+  background-color: unset       !important;                                   }
+  div.quick-input-widget .quick-input-header .monaco-inputbox.synthetic-focus {
+  background-color: unset       !important;
+}
+
+div.monaco-hover
+{ 
+  padding:       0px 0px   !important; 
+  border-radius: 4px       !important; 
+  border:        0px solid !important; 
+  box-shadow:  rgba(0, 0, 0, 0.36) 0px 0px 8px 2px; 
+  top:           0px
+}
+
+div.editor-widget.suggest-widget
+{
+  padding:       4px 7px   !important; 
+  border-radius: 4px       !important; 
+  border:        0px solid !important; 
+  box-shadow:  rgba(0, 0, 0, 0.36) 0px 0px 8px 2px; 
+  top:           0px
+}
+
+div.editor-widget.parameter-hints-widget
+{
+  padding:       4px 7px    !important;  
+  border-radius: 4px        !important; 
+  border:        1px solid  !important; 
+  box-shadow:  rgba(0, 0, 0, 0.36) 0px 0px 8px 2px;  
+  top:           0px        !important; 
+}
+
+/* Add a border radius to the cursors */
+div.cursor 
+{
+  border-radius: 4px !important;
+}
+
+/* Add a border radius to bracket match */
+.bracket-match 
+{
+  padding:       4px !important; 
+  border-radius: 4px !important;
+}
