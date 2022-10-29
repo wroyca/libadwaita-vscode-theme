@@ -4,6 +4,8 @@ This theme was designed for my personal use. Therefore, I made engineering and d
 
 *Note: you can uncomment the CSS code to remove the title bar, but the vscode contains automatic calculations that add padding to the bottom of the page, and the current band-aid solution from this theme is not sufficient.*
 
+![busy](https://user-images.githubusercontent.com/91024200/198850434-45727cf5-4b69-4493-b49b-df2da603fc42.png)
+
 ## Installation
 
 1. Clone the project.
@@ -17,6 +19,7 @@ This theme was designed for my personal use. Therefore, I made engineering and d
 4. Install [Moxer Icons](https://marketplace.visualstudio.com/items?itemName=Equinusocio.moxer-icons) and [Customize UI](https://marketplace.visualstudio.com/items?itemName=iocave.customize-ui) extension from the Visual Studio Code Marketplace. Make sure to follow its instructions so that VS Code has permission to patch itself.
 
 5. Copy the repository settings.json to your own settings.json.
+
 
 ## Screenshots
 <div>
