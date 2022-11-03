@@ -57,7 +57,7 @@ a way around it.
   width:         100vh        !important;
   max-width:     fit-content  !important;
   border-radius: 5px          !important;
-  margin-left:   10px         !important;
+  margin-left:   5px          !important;
 }
 
 /* hides buttons from the tab container. */

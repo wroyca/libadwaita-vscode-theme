@@ -1,6 +1,12 @@
 {
   "breadcrumbs.enabled": true,
+  "customizeUI.statusBarPosition": "under-panel",
   "customizeUI.listRowHeight": 30,
+  "customizeUI.fontSizeMap": {
+    "13px": "16px",
+    "monospace": "16px"
+  },
+  "customizeUI.activityBar": "bottom",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.fontFamily": "'Fira Code'",
   "editor.inlayHints.padding": true,
@@ -11,12 +17,11 @@
   "editor.smoothScrolling": true,
   "terminal.integrated.smoothScrolling": true,
   "window.menuBarVisibility": "toggle",
-  "window.titleBarStyle": "custom",
   "workbench.activityBar.visible": false,
   "workbench.iconTheme": "moxer-icons",
   "workbench.list.smoothScrolling": true,
   "workbench.statusBar.visible": false,
   "vscode_custom_css.imports": [
-    "file:///home/wroy/vscode-powerline/powerline.css"
+    "file:///home/wroy/vscode-gnome/vscode-gnome.css"
   ],
 }
