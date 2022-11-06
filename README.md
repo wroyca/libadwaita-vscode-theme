@@ -23,6 +23,7 @@ This theme was designed for my personal use. Therefore, I made engineering and d
 
 ## Screenshots
 <div>
+    <img src="0.png">
     <img src="1.png">
     <img src="2.png">
     <img src="3.png">

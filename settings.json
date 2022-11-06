@@ -1,27 +1,21 @@
 {
-  "breadcrumbs.enabled": true,
-  "customizeUI.statusBarPosition": "under-panel",
-  "customizeUI.listRowHeight": 30,
-  "customizeUI.fontSizeMap": {
-    "13px": "16px",
-    "monospace": "16px"
-  },
+  "breadcrumbs.enabled": false,
   "customizeUI.activityBar": "bottom",
+  "customizeUI.statusBarPosition": "under-panel",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.fontFamily": "'Fira Code'",
   "editor.inlayHints.padding": true,
   "editor.lineHeight": 2,
   "editor.minimap.renderCharacters": false,
   "editor.minimap.scale": 2,
-  "editor.minimap.size": "fill",
   "editor.smoothScrolling": true,
   "terminal.integrated.smoothScrolling": true,
   "window.menuBarVisibility": "toggle",
   "workbench.activityBar.visible": false,
-  "workbench.iconTheme": "moxer-icons",
+  "workbench.colorTheme": "Visual Studio Dark",
   "workbench.list.smoothScrolling": true,
-  "workbench.statusBar.visible": false,
+  "workbench.startupEditor": "none",
   "vscode_custom_css.imports": [
     "file:///home/wroy/vscode-gnome/vscode-gnome.css"
-  ],
+  ]
 }
