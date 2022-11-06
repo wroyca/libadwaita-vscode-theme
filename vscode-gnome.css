@@ -1,16 +1,67 @@
-/* Remove unsuitable color from the title bar */
-#workbench\.parts\.titlebar 
+/* Add border-radius to everything and use :not to replace !important. */
+* :not(
+  .bracket-match,
+  .codicon-chrome-minimize,
+  .codicon,
+  .core-guide-indent,
+  .core-guide,
+  .cslr,
+  .cursor-line-style,
+  .cursor-smooth-caret-animation,
+  .cursor-solid,
+  .cursors-layer,
+  .editor-actions,
+  .has-selection,
+  .monaco-list-row,
+  .monaco-mouse-cursor-text,
+  .monaco-scrollable-element .scrollbar.horizontal .slider,
+  .monaco-scrollable-element .scrollbar.horizontal,
+  .monaco-scrollable-element .scrollbar.vertical .slider,
+  .monaco-scrollable-element .scrollbar>.slider,
+  .selected-text,
+  .tabs-container > .tab,
+  .tabs,
+  .title-actions,
+  .top-right-radius,
+  .view-line,
+  .view-lines,
+  .window-icon,
+  .window-minimize,
+  .windows, 
+  .wordHighlight,
+  #workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.editor-container > div > div > div.overflow-guard > div.minimap.slider-mouseover > div.minimap-shadow-visible,
+  #workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.editor-container > div > div > div.overflow-guard > div.minimap.slider-mouseover > div.minimap-slider,
+  #workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.editor-container > div > div > div.overflow-guard > div.minimap.slider-mouseover,
+  #workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.title.tabs.show-file-icons > div.tabs-and-actions-container > div.editor-actions > div > div > ul > li:nth-child(2) > div > div > a,
+  #workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.title.tabs.show-file-icons > div.tabs-and-actions-container > div.editor-actions > div > div > ul > li.action-item.menu-entry > a,
+  #workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.title.tabs.show-file-icons > div.tabs-and-actions-container > div.monaco-scrollable-element,
+  #workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.title.tabs.show-file-icons,
+  #workbench\.parts\.panel > div.composite.title,
+  #workbench\.parts\.titlebar, 
+  body > div.file-icons-enabled.enable-motion.monaco-workbenXch.windows.chromium.noauxiliarybar.nostatusbar.maximized.vs-dark.vscode-theme-defaults-themes-dark_plus-json > div.monaco-grid-view > div > div > div.monaco-scrollable-element > div.split-view-container > div:nth-child(3) > div > div > div.monaco-scrollable-element > div.split-view-container > div:nth-child(3) > div > div > div.sash-container > div,
+  div.cursor,
+  div.editor-widget.parameter-hints-widget,
+  div.editor-widget.suggest-widget,
+  div.explorer-viewlet div.pane-body,
+  div.indent-guide.active,
+  div.monaco-hover,
+  div.monaco-tl-indent,
+  div.quick-input-widget,
+  div.quick-input-widget .quick-input-header .monaco-inputbox,
+  div.quick-input-widget .quick-input-header .monaco-inputbox.synthetic-focus,
+  div.quick-input-widget .quick-input-header,
+  div.quick-input-widget .quick-input-list
+  ) 
 {
-  background-color: unset !important;
+  border-radius: 5px !important;
 }
 
 /* 
 README: 
 These settings reproduce the inlining from Mac on Linux and Windows. 
 
-Unfortunately, the code contains automatic calculations that add a padding at 
-the bottom of the page, so this is disabled by default. We need to find 
-a way around it. 
+Unfortunately, the code contains automatic padding so 
+this is disabled by default. We need to find  a way around it. 
 
 #workbench\.parts\.titlebar 
 {
@@ -24,31 +75,11 @@ a way around it.
 }
 */
 
-/* Hide breadcrumb even if the user has not done so in the settings */
-#workbench\.parts\.editor > 
-  div.content > 
-  div.grid-view-container > 
-  div >
-  div > 
-  div > 
-  div.monaco-scrollable-element > 
-  div.split-view-container > 
-  div > 
-  div > 
-  div.title.tabs.show-file-icons > 
-  div.tabs-breadcrumbs 
-{
-    display: none !important;
-}
-
 /* Central alignment for tabs in the tab container  */
 .tabs 
 {
-  display:         flex   !important;
-  justify-content: left   !important;
-  align-items:     center !important;
-  width:           auto   !important;
-  height:          50px   !important; 
+  height:      55px !important; 
+  padding-top: 10px !important;
 }
 
 /* Border radius for tabs. For practical reasons we do not extend them to the maximum width as libadwaita does.  */
@@ -60,10 +91,27 @@ a way around it.
   margin-left:   5px          !important;
 }
 
+/* Border radius for tabs overflow. */
+#workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.title.tabs.show-file-icons > div.tabs-and-actions-container > div.monaco-scrollable-element
+{
+  border-radius: 5px !important;
+}
+
+/* Border radius for tabs container. */
+#workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.title.tabs.show-file-icons
+{
+  border-radius: 5px !important;
+}
+
 /* hides buttons from the tab container. */
 .editor-actions 
 {
-  display: none !important;
+  margin-right:  -50px !important; 
+  pointer-events: none !important; } 
+  #workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.title.tabs.show-file-icons > div.tabs-and-actions-container > div.editor-actions > div > div > ul > li.action-item.menu-entry > a   {
+  opacity:          0% !important; }
+  #workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.title.tabs.show-file-icons > div.tabs-and-actions-container > div.editor-actions > div > div > ul > li:nth-child(2) > div > div > a {
+  opacity:          0% !important;
 }
 
 /* hides buttons from the tree explorer. */
@@ -76,16 +124,19 @@ a way around it.
 .monaco-scrollable-element .scrollbar.vertical .slider    
 {
   width:          5px !important;
-  margin-left:    5px !important;                          }
+  margin-left:    5px !important;                          } 
  
+  /* 
+  NOTE: Experimental margin to hide the horizontal scroll bar.
  .monaco-scrollable-element .scrollbar.horizontal          {
-  margin-bottom: -5px !important;                          }
- 
+  margin-bottom: -5px !important;                          } 
+  */
+
  .monaco-scrollable-element .scrollbar.horizontal .slider  {
   height:         5px !important;                          }
-
+  
  .monaco-scrollable-element .scrollbar>.slider             {
-  border-radius:  5px !important;                               
+  border-radius:  5px !important;
 }
 
 /* Adds a border radius to the explorer selection */
@@ -143,7 +194,7 @@ div.editor-widget.parameter-hints-widget
   border-radius: 4px        !important; 
   border:        1px solid  !important; 
   box-shadow:  rgba(0, 0, 0, 0.36) 0px 0px 8px 2px;  
-  top:           0px        !important; 
+  top:           0px        !important;
 }
 
 /* Add a border radius to the cursors */
@@ -157,4 +208,38 @@ div.cursor
 {
   padding:       4px !important; 
   border-radius: 4px !important;
+}
+
+/* Add a border radius to minimap scroll */
+#workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.editor-container > div > div > div.overflow-guard > div.minimap.slider-mouseover > div.minimap-slider
+{
+  border-radius: 5px !important;
+}
+
+/* Add a border radius to word highlight */
+.wordHighlight
+{
+  border-radius: 4px;
+}
+
+/* 
+Background color of the editor's corners and panel.
+This must be changed manually depending on your theme.
+*/
+
+#workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div
+{
+  background-color: #252526 !important;
+}
+
+#workbench\.parts\.panel
+{
+  background-color: unset !important;
+}
+
+#workbench\.parts\.panel > div.composite.title
+{
+  border-top-color: #252526 !important;
+  background-color: #252526 !important;
+  border-radius:         10px !important;
 }
