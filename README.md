@@ -27,6 +27,7 @@ This theme was designed for my personal use. If you use it, you should probably 
 > These screenshots may be old and may not represent the latest updates.
 
 <div>
+    <img src="Libadwaita.png">
     <img src="0.png">
     <img src="1.png">
     <img src="2.png">

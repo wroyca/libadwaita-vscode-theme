@@ -20,7 +20,7 @@
   > div.tabs-container
   > div.tab
 {
-  flex-grow:     1   !important; /* Expand the tabs and fill the tab bar, similar to the behavior of libadwaita. */
+  flex-grow:     1   !important; /* Expand tabs and fill the tab bar, similar to the behavior of libadwaita. */
   margin-left:   5px !important; /* Compensate with padding for the rounding on the left side. */
   border-radius: 6px !important; /* ^ */
 }
