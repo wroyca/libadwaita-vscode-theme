@@ -1,6 +1,7 @@
 .tabs
 {
-  height:     45px !important; /* Add padding to the top and bottom of the tabs within the tabs container.*/
+  /* If you don't use the native title bar, please change 47 to 45. */
+  height:     47px !important; /* Add padding to the top and bottom of the tabs within the tabs container.*/
   padding-top: 5px !important; /* ^ */
 }
 
