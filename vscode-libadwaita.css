@@ -1,0 +1,62 @@
+.tabs
+{
+  height:     45px !important; /* Add padding to the top and bottom of the tabs within the tabs container.*/
+  padding-top: 5px !important; /* ^ */
+}
+
+#workbench\.parts\.editor
+  > div.content
+  > div.grid-view-container
+  > div
+  > div
+  > div
+  > div.monaco-scrollable-element
+  > div.split-view-container
+  > div
+  > div
+  > div.title.tabs.show-file-icons
+  > div.tabs-and-actions-container
+  > div.monaco-scrollable-element
+  > div.tabs-container
+  > div.tab
+{
+  flex-grow:     1   !important; /* Expand the tabs and fill the tab bar, similar to the behavior of libadwaita. */
+  margin-left:   5px !important; /* Compensate with padding for the rounding on the left side. */
+  border-radius: 6px !important; /* ^ */
+}
+
+#workbench\.parts\.editor
+  > div.content
+  > div.grid-view-container
+  > div
+  > div
+  > div
+  > div.monaco-scrollable-element
+  > div.split-view-container
+  > div
+  > div
+  > div.title.tabs.show-file-icons
+  > div.tabs-and-actions-container
+  > div.monaco-scrollable-element
+  > div.tabs-container
+  > div.tab .tab-label {
+  flex:   0      !important; /* Set the alignment for the tabs name to be centered */
+  margin: 0 auto !important; /* ^ */
+}
+
+.editor-actions
+{
+  margin-right:  -85px !important;   /* Add padding to the right of the tabs container. */
+  pointer-events: none !important; } /* Disable the tab container actions and make them invisible. Using "display: none" which would disrupt the padding. */
+  #workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.title.tabs.show-file-icons > div.tabs-and-actions-container > div.editor-actions > div > div > ul > li.action-item.menu-entry > a   {
+  opacity:          0% !important; } /* ^ */
+  #workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.title.tabs.show-file-icons > div.tabs-and-actions-container > div.editor-actions > div > div > ul > li:nth-child(2) > div > div > a {
+  opacity:          0% !important; } /* ^ */
+  #workbench\.view\.explorer       {
+  padding-right: 10px !important     /* Add padding to the left of the tabs container. */
+}
+
+.title-actions
+{
+  display: none !important; /* Unlike the .editor-actions, the tree-explorer does not require padding for actions, so "display: none" can be used. */
+}
