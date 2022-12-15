@@ -1,6 +1,6 @@
 # Libadwaita theme for Visual Studio Code.
 
-If you're interested in using this theme, I'd recommend forking it and making it your own so that it fits your personal needs. However, if you do make any changes or improvements to the theme, I'd be more than happy to review and potentially merge your pull request. Thanks for considering this theme! 🎉This theme was designed for my personal use. If you use it, you should probably fork it and adapt it to your personal use. That said, PRs are welcome if you decide to improve it! 🎉
+If you're interested in using this theme, I'd recommend forking it and making it your own so that it fits your personal needs. However, if you do make any changes or improvements to the theme, I'd be more than happy to review and potentially merge your pull request. Thanks for considering this theme! 🎉
 
 ![libadwaita](libadwaita.png)
 
@@ -12,3 +12,6 @@ If you're interested in using this theme, I'd recommend forking it and making it
 
 3. Add the following line to your VS code `settings.json`, replacing `file:///home/username/vscode-libadwaita/vscode-libadwaita.css` with the full path to the directory where you cloned the project.
 
+## Bonus
+
+If you're looking for a great theme to use with this, I'd highly recommend checking out https://github.com/piousdeer/vscode-adwaita.git. It's an amazing piece of work by @piousdeer! :)
