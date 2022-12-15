@@ -14,4 +14,4 @@ If you're interested in using this theme, I'd recommend forking it and making it
 
 ## Bonus
 
-If you're looking for a great theme to use with this, I'd highly recommend checking out https://github.com/piousdeer/vscode-adwaita.git. It's an amazing piece of work by @piousdeer! :)
+If you're looking for a great theme to use with this, I'd highly recommend checking out [vscode-adwaita](https://github.com/piousdeer/vscode-adwaita.git). It's an amazing piece of work by [@piousdeer](https://github.com/piousdeer)! :)
