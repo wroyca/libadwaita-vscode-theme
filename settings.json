@@ -1,21 +1,10 @@
 {
   "breadcrumbs.enabled": false,
-  "customizeUI.activityBar": "bottom",
-  "customizeUI.statusBarPosition": "under-panel",
-  "editor.cursorSmoothCaretAnimation": true,
-  "editor.fontFamily": "'Fira Code'",
-  "editor.inlayHints.padding": true,
-  "editor.lineHeight": 2,
   "editor.minimap.renderCharacters": false,
-  "editor.minimap.scale": 2,
-  "editor.smoothScrolling": true,
-  "terminal.integrated.smoothScrolling": true,
   "window.menuBarVisibility": "toggle",
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Visual Studio Dark",
-  "workbench.list.smoothScrolling": true,
   "workbench.startupEditor": "none",
   "vscode_custom_css.imports": [
-    "file:///home/wroy/vscode-gnome/vscode-gnome.css"
+    "file:///home/wroy/vscode-libadwaita/vscode-libadwaita.css"
   ]
 }
