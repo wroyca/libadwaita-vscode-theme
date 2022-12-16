@@ -1,0 +1,73 @@
+{
+  "name": "libadwaita",
+  "colors": {
+    "activityBar.activeBackground": "#444342",
+    "activityBar.activeBorder": "#00000000",
+    "activityBar.background": "#323130",
+    "activityBar.border": "#171717",
+    "activityBarBadge.background": "#007acc",
+    "editor.background": "#1d1d1d",
+    "editor.foreground": "#d2d2d2",
+    "editorGroup.border": "#222020",
+    "editorGroupHeader.border": "#222020",
+    "editorGroupHeader.tabsBackground": "#323130",
+    "focusBorder": "#00000000",
+    "list.activeSelectionBackground": "#444342",
+    "list.activeSelectionForeground": "#ffffff",
+    "list.hoverBackground": "#403f3e",
+    "list.inactiveSelectionBackground": "#444342",
+    "list.inactiveSelectionForeground": "#ffffff",
+    "panel.background": "#1d1d1d",
+    "panel.border": "#323130",
+    "panelTitle.activeBorder": "#c0bfbc",
+    "panelTitle.activeForeground": "#ffffff",
+    "scrollbar.shadow": "#000",
+    "sideBar.background": "#323130",
+    "sideBar.border": "#222020",
+    "sideBarSectionHeader.background": "#00000000",
+    "sideBarSectionHeader.border": "#222020",
+    "sideBarTitle.foreground": "#d2d2d2",
+    "statusBar.background": "#323130",
+    "statusBar.border": "#222020",
+    "statusBar.debuggingForeground": "#d2d2d2",
+    "statusBar.foreground": "#d2d2d2",
+    "statusBar.noFolderBackground": "#323130",
+    "statusBar.noFolderForeground": "#d2d2d2",
+    "statusBarItem.remoteBackground": "#323130",
+    "statusBarItem.remoteForeground": "#d2d2d2",
+    "tab.activeBackground": "#444342",
+    "tab.border": "#323130",
+    "tab.hoverBackground": "#4b4a49",
+    "tab.inactiveBackground": "#323130",
+    "tab.unfocusedHoverBackground": "#403f3e",
+    "widget.shadow": "#00000000",
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "source",
+      ],
+      "settings": {
+        "foreground": "#d2d2d2"
+      }
+    },
+    {
+      "scope": [
+        "comment"
+      ],
+      "settings": {
+        "foreground": "#d5c4a1",
+      }
+    },
+    {
+      "scope": [
+        "storage.type",
+        "keyword",
+      ],
+      "settings": {
+        "foreground": "#8ba6c5",
+        "fontStyle": ""
+      }
+    },
+  ]
+}
