@@ -12,6 +12,12 @@ If you're interested in using this theme, I'd recommend forking it and making it
 
 3. Add the following line to your VS code `settings.json`, replacing `file:///home/username/vscode-libadwaita/vscode-libadwaita.css` with the full path to the directory where you cloned the project.
 
+```
+  "vscode_custom_css.imports": [
+    "file:///home/wroy/vscode-libadwaita/vscode-libadwaita.css"
+  ]
+```
+
 ## Bonus
 
 If you're looking for a great theme to use with this, I'd highly recommend checking out [vscode-adwaita](https://github.com/piousdeer/vscode-adwaita.git). It's an amazing piece of work by [@piousdeer](https://github.com/piousdeer)! :)
