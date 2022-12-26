@@ -13,8 +13,9 @@
   > div.title.tabs.show-file-icons
   > div.tabs-and-actions-container
 {
-  min-height: 38px;
-  margin-top: 5px;
+  min-height:   26px;
+  padding:       4px;
+  margin-top:    5px;
   margin-bottom: 5px;
 }
 
@@ -60,21 +61,6 @@
   margin: 0 auto !important; /* ^ */
 }
 
-.title-actions
-{
-  display: none !important; /* Disable title actions. */
-}
-
-.editor-actions
-{
-  display: none !important; /* Disable the tab container actions. */
-}
-
-#workbench\.view\.explorer
-{
-  padding-right: 10px !important /* Add padding to the left of the tabs container. */
-}
-
 #workbench\.parts\.editor
   > div.content
   > div.grid-view-container
@@ -90,13 +76,18 @@
   padding-right: 5px !important; /* Add padding to the right of the tabs container. */
 }
 
+.editor-actions
+{
+  display: none !important; /* Disable the tab container actions. */
+}
+
+/* --------------------- */
+
 /* Add a border radius to the cursors */
 div.cursor
 {
   border-radius: 4px !important;
 }
-
-/* --------------------- */
 
 /* Add a border radius to bracket match */
 .bracket-match
