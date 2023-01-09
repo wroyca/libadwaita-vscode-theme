@@ -14,9 +14,9 @@
   > div.tabs-and-actions-container
 {
   min-height:   26px;
-  padding:       4px;
-  margin-top:    5px;
-  margin-bottom: 5px;
+  padding:       4px; /*
+  margin-top:    1px; */
+  margin-bottom: 2px;
 }
 
 #workbench\.parts\.editor
