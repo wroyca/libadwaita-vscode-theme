@@ -20,4 +20,13 @@ If you're interested in using this theme, I'd recommend forking it and making it
 
 ## Bonus
 
+It is possible to hide the "editor action" with:
+
+```css
+.editor-actions
+{
+  display: none !important; /* Disable the tab container actions. */
+}
+```
+
 If you're looking for a great theme to use with this, I'd highly recommend checking out [vscode-adwaita](https://github.com/piousdeer/vscode-adwaita.git). It's an amazing piece of work by [@piousdeer](https://github.com/piousdeer)! :)
