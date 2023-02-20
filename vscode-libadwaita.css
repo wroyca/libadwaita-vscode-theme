@@ -1,5 +1,3 @@
-/* https://gitlab.gnome.org/GNOME/libadwaita/-/blob/6528350b4ea4a6e6ed01d984d688d34fcd4fc6aa/src/stylesheet/widgets/_tab-view.scss#L25 */
-
 #workbench\.parts\.editor
   > div.content
   > div.grid-view-container
@@ -13,10 +11,8 @@
   > div.title.tabs.show-file-icons
   > div.tabs-and-actions-container
 {
-  min-height:   26px;
-  padding:       4px;
-  margin-top:    5px;
-  margin-bottom: 5px;
+  padding-top:    5px;
+  padding-bottom: 5px;
 }
 
 #workbench\.parts\.editor
@@ -35,10 +31,10 @@
   > div.tabs-container
   > div.tab
 {
-  transition: background 150ms ease-in-out;
-  flex-grow:     1   !important; /* Expand tabs and fill the tab bar, similar to the behavior of libadwaita. */
-  margin-left:   5px !important; /* Compensate the separator padding. */
-  border-radius: 6px !important; /* Libadwaita radius */
+  transition:    background 150ms ease-in-out;
+  flex-grow:     1   !important; 
+  border-radius: 6px !important;
+  margin-left:   5px !important;
 }
 
 #workbench\.parts\.editor
@@ -57,8 +53,8 @@
   > div.tabs-container
   > div.tab .tab-label
 {
-  flex:   0      !important; /* Set the alignment for the tabs name to be centered */
-  margin: 0 auto !important; /* ^ */
+  flex:   0      !important;
+  margin: 0 auto !important;
 }
 
 #workbench\.parts\.editor
@@ -73,41 +69,46 @@
   > div
   > div.title.tabs.show-file-icons
 {
-  padding-right: 5px !important; /* Add padding to the right of the tabs container. */
+  padding-right: 5px !important;
 }
 
-.editor-actions
-{
-  display: none !important; /* Disable the tab container actions. */
-}
+/* 
+===========================================================
+Experimental.
+=========================================================== 
+*/
 
-#workbench\.view\.explorer
-{
-  padding-right: 10px !important /* Add padding to the side-panel. */
-}
-
-/* --------------------- */
-
-/* Add a border radius to the cursors */
 div.cursor
 {
   border-radius: 4px !important;
 }
 
-/* Add a border radius to bracket match */
 .bracket-match
 {
   padding:       4px !important;
   border-radius: 4px !important;
 }
 
-/* Add a border radius to minimap scroll */
-#workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.editor-container > div > div > div.overflow-guard > div.minimap.slider-mouseover > div.minimap-slider
+#workbench\.parts\.editor 
+  > div.content 
+  > div.grid-view-container 
+  > div 
+  > div 
+  > div 
+  > div.monaco-scrollable-element 
+  > div.split-view-container 
+  > div 
+  > div 
+  > div.editor-container 
+  > div 
+  > div 
+  > div.overflow-guard 
+  > div.minimap.slider-mouseover 
+  > div.minimap-slider
 {
   border-radius: 4px !important;
 }
 
-/* Add a border radius to word highlight */
 .wordHighlight
 {
   border-radius: 4px;
@@ -118,7 +119,7 @@ div.monaco-hover
   padding:       0px 0px   !important;
   border-radius: 4px       !important;
   border:        0px solid !important;
-  box-shadow:  rgb(0 0 0 / 16%) 0px 0px 8px 2px;
+  box-shadow:    rgb(0 0 0 / 16%) 0px 0px 8px 2px;
   top:           0px
 }
 
@@ -127,7 +128,7 @@ div.editor-widget.suggest-widget
   padding:       4px 7px   !important;
   border-radius: 4px       !important;
   border:        0px solid !important;
-  box-shadow:  rgb(0 0 0 / 16%) 0px 0px 8px 2px;
+  box-shadow:    rgb(0 0 0 / 16%) 0px 0px 8px 2px;
   top:           0px
 }
 
@@ -136,44 +137,64 @@ div.editor-widget.parameter-hints-widget
   padding:       4px 7px    !important;
   border-radius: 4px        !important;
   border:        1px solid  !important;
-  box-shadow:  rgb(0 0 0 / 16%) 0px 0px 8px 2px;
+  box-shadow:    rgb(0 0 0 / 16%) 0px 0px 8px 2px;
   top:           0px        !important;
 }
 
 div.quick-input-widget
 {
-  margin-top:       10%         !important;
-  border:           0px solid;
-  border-radius:    10px        !important;                                   }
-  div.quick-input-widget .quick-input-list                                    {
-  padding-left:     10px        !important;
-  padding-right:    10px        !important;                                   }
-  div.quick-input-widget .quick-input-header                                  {
-  padding:          6px         !important;
-  border-bottom:    0px solid   !important;                                   }
-  div.quick-input-widget .quick-input-header .monaco-inputbox                 {
-  padding-left:     8px         !important;
-  outline:          none        !important;
-  background-color: unset       !important;                                   }
-  div.quick-input-widget .quick-input-header .monaco-inputbox.synthetic-focus {
-  background-color: unset       !important;
+  margin-top:    10%         !important;
+  border:        0px solid;
+  border-radius: 10px        !important;                                   
 }
 
-div.explorer-viewlet div.pane-body {
+div.quick-input-widget .quick-input-list                                    
+{
+  padding-left:  10px  !important;
+  padding-right: 10px  !important;                                   
+}
+
+div.quick-input-widget .quick-input-header                                  
+{
+  padding:       6px       !important;
+  border-bottom: 0px solid !important;                                   
+}
+
+div.quick-input-widget .quick-input-header .monaco-inputbox                 
+{
+  padding-left:     8px   !important;
+  outline:          none  !important;
+  background-color: unset !important;                                   
+}
+
+div.quick-input-widget .quick-input-header .monaco-inputbox.synthetic-focus 
+{
+  background-color: unset !important;
+}
+
+div.explorer-viewlet div.pane-body 
+{
   padding-left:  10px !important;
-  padding-right: 10px !important;  }
- .monaco-list-row                  {
-  border-radius: 5px  !important;
+  padding-right: 10px !important;  
+}
+
+.monaco-list-row                  
+{
+  border-radius: 5px !important;
 }
 
 .monaco-scrollable-element .scrollbar.vertical .slider
 {
-  width:          5px !important;
-  margin-left:    5px !important;                          }
+  width:       5px !important;
+  margin-left: 5px !important;                          
+}
 
-.monaco-scrollable-element .scrollbar.horizontal .slider   {
-  height:         5px !important;                          }
+.monaco-scrollable-element .scrollbar.horizontal .slider   
+{
+  height: 5px !important;                          
+}
 
-.monaco-scrollable-element .scrollbar>.slider              {
-  border-radius:  5px !important;
+.monaco-scrollable-element .scrollbar>.slider              
+{
+  border-radius: 5px !important;
 }
