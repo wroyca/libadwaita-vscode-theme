@@ -11,8 +11,9 @@
   > div.title.tabs.show-file-icons
   > div.tabs-and-actions-container
 {
-  padding-top:    5px;
-  padding-bottom: 5px;
+  min-height:     26px;
+  padding-top:     5px;
+  padding-bottom:  5px;
 }
 
 #workbench\.parts\.editor
