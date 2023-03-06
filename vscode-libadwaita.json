@@ -1,0 +1,16 @@
+{
+  "window.menuBarVisibility": "toggle",
+  "vscode_custom_css.imports": [
+    "file:///home/wroy/vscode-libadwaita/src/vs/workbench/browser/parts/editor/media/tabstitlecontrol.css",
+    "file:///home/wroy/vscode-libadwaita/src/vs/editor/browser/viewParts/viewCursors/viewCursors.css",
+    "file:///home/wroy/vscode-libadwaita/src/vs/editor/contrib/bracketMatching/browser/bracketMatching.css",
+    "file:///home/wroy/vscode-libadwaita/src/vs/editor/browser/viewParts/minimap/minimap.css",
+    "file:///home/wroy/vscode-libadwaita/src/vs/editor/contrib/wordHighlighter/browser/highlightDecorations.css",
+    "file:///home/wroy/vscode-libadwaita/src/vs/editor/contrib/hover/browser/hover.css",
+    "file:///home/wroy/vscode-libadwaita/src/vs/editor/contrib/suggest/browser/media/suggest.css",
+    "file:///home/wroy/vscode-libadwaita/src/vs/editor/contrib/parameterHints/browser/parameterHints.css",
+    "file:///home/wroy/vscode-libadwaita/src/vs/platform/quickinput/browser/media/quickInput.css",
+    "file:///home/wroy/vscode-libadwaita/src/vs/base/browser/ui/scrollbar/media/scrollbars.css",
+    "file:///home/wroy/vscode-libadwaita/src/vs/base/browser/ui/list/list.css"
+  ]
+}
