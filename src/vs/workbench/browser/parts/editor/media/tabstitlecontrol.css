@@ -1,9 +1,15 @@
+.editor-container {
+  /* 80% is more suitable than 100% as the latter would lead to overflow problems with non-text pages such as Welcome and binary. */
+  height: 80% !important;
+}
+
 /* Title Container */
 
 .monaco-workbench .part.editor>.content .editor-group-container>.title>.tabs-and-actions-container {
   display: flex;
   /* position tabs border bottom or editor actions (when tabs wrap) relative to this container */
   position: relative;
+  margin: 5px;
 }
 
 .monaco-workbench .part.editor>.content .editor-group-container>.title>.tabs-and-actions-container.tabs-border-bottom::after {
@@ -41,7 +47,6 @@
 }
 
 .monaco-workbench .part.editor>.content .editor-group-container>.title>.tabs-and-actions-container.wrapping .tabs-container {
-
   /* Enable wrapping via flex layout and dynamic height */
   height: auto;
   flex-wrap: wrap;
@@ -57,11 +62,17 @@
 .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab {
   position: relative;
   display: flex;
+  flex-grow: 1;
   white-space: nowrap;
   cursor: pointer;
   height: 35px;
   box-sizing: border-box;
   padding-left: 10px;
+  /* Border radius requires a margin in order to differentiate between tabs. */
+  margin-left: 5px;
+  border-radius: 6px;
+  /* To reduce awkwardness when switching between tabs, the background transition has been set to 150ms ease-in-out. Note that a proper slide transition is also required, but the method used by libadwaita needs to be determined first. */
+  transition: background 150ms ease-in-out;
 }
 
 .monaco-workbench .part.editor>.content .editor-group-container>.title>.tabs-and-actions-container.wrapping .tabs-container>.tab:last-child {
@@ -214,6 +225,246 @@
 /* Tab Label */
 
 .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .tab-label {
+  flex: 0;
   margin-top: auto;
   margin-bottom: auto;
+  /* aligns icon and label horizontally centered in the tab */
+  margin: 0 auto;
+  /* aligns icon and label vertically centered in the tab */
+  line-height: 35px;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-shrink .tab-label {
+  position: relative;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-shrink>.tab-label>.monaco-icon-label-container::after {
+  /* enables a linear gradient to overlay the end of the label when tabs overflow */
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 5px;
+  opacity: 1;
+  padding: 0;
+  /* the rules below ensure that the gradient does not impact top/bottom borders (https://github.com/microsoft/vscode/issues/115129) */
+  top: 1px;
+  bottom: 1px;
+  height: calc(100% - 2px);
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-shrink:focus>.tab-label>.monaco-icon-label-container::after {
+  /* when tab has the focus this shade breaks the tab border (fixes https://github.com/microsoft/vscode/issues/57819) */
+  opacity: 0;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-shrink>.tab-label.tab-label-has-badge::after {
+  /* with tab sizing shrink and badges, we want a right-padding because the close button is hidden */
+  padding-right: 5px;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sticky-compact:not(.has-icon) .monaco-icon-label {
+  /* ensure that sticky-compact tabs without icon have label centered */
+  text-align: center;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-fit .monaco-icon-label,
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-fit .monaco-icon-label>.monaco-icon-label-container {
+  /* fixes https://github.com/microsoft/vscode/issues/20182 */
+  overflow: visible;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-shrink>.monaco-icon-label>.monaco-icon-label-container {
+  text-overflow: clip;
+  flex: none;
+}
+
+.monaco-workbench.hc-black .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-shrink>.monaco-icon-label>.monaco-icon-label-container,
+.monaco-workbench.hc-light .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-shrink>.monaco-icon-label>.monaco-icon-label-container {
+  text-overflow: ellipsis;
+}
+
+/* Tab Actions */
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-actions {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 28px;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-actions>.monaco-action-bar {
+  width: 28px;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.tab-actions-right.sizing-shrink>.tab-actions {
+  flex: 0;
+  /* let the tab actions be pushed out of view when sizing is set to shrink to make more room */
+  overflow: hidden;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.dirty.tab-actions-right.sizing-shrink>.tab-actions,
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sticky.tab-actions-right.sizing-shrink>.tab-actions,
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.tab-actions-right.sizing-shrink:hover>.tab-actions,
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.tab-actions-right.sizing-shrink>.tab-actions:focus-within {
+  /* ...but still show the tab actions on hover, focus and when dirty or sticky */
+  overflow: visible;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.tab-actions-off:not(.dirty):not(.sticky)>.tab-actions,
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.tab-actions-off.sticky-compact>.tab-actions {
+  /* hide the tab actions when we are configured to hide it (unless dirty or sticky, but always when sticky-compact) */
+  display: none;
+}
+
+/* always show tab actions for active tab */
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab.active>.tab-actions .action-label,
+/* always show tab actions on focus */
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab>.tab-actions .action-label:focus,
+/* always show tab actions on hover */
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab:hover>.tab-actions .action-label,
+/* always show tab actions on hover */
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab.active:hover>.tab-actions .action-label,
+/* always show tab actions for sticky tabs */
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab.sticky>.tab-actions .action-label,
+/* always show tab actions for dirty tabs */
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab.dirty>.tab-actions .action-label {
+  opacity: 1;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-actions .actions-container {
+  justify-content: center;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab>.tab-actions .action-label.codicon {
+  color: inherit;
+  font-size: 16px;
+  padding: 2px;
+  width: 16px;
+  height: 16px;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab.sticky.dirty>.tab-actions .action-label:not(:hover)::before,
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sticky.dirty>.tab-actions .action-label:not(:hover)::before {
+  /* use `pinned-dirty` icon unicode for sticky-dirty indication */
+  content: "\ebb2";
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab.dirty>.tab-actions .action-label:not(:hover)::before,
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.dirty>.tab-actions .action-label:not(:hover)::before {
+  /* use `circle-filled` icon unicode for dirty indication */
+  content: "\ea71";
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.active>.tab-actions .action-label,
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.active:hover>.tab-actions .action-label,
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.dirty>.tab-actions .action-label,
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sticky>.tab-actions .action-label,
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab:hover>.tab-actions .action-label {
+  /* show tab actions dimmed for inactive group */
+  opacity: 0.5;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-actions .action-label {
+  opacity: 0;
+}
+
+/* Tab Actions: Off */
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.tab-actions-off {
+  /* give a little bit more room if tab actions is off */
+  padding-right: 10px;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-shrink.tab-actions-off:not(.sticky-compact) {
+  /* we need less room when sizing is shrink (unless tab is sticky-compact) */
+  padding-right: 5px;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.tab-actions-off.dirty-border-top>.tab-actions {
+  /* hide dirty state when highlightModifiedTabs is enabled and when running without tab actions */
+  display: none;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.tab-actions-off.dirty:not(.dirty-border-top):not(.sticky-compact),
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.tab-actions-off.sticky:not(.sticky-compact) {
+  /* remove extra padding when we are running without tab actions (unless tab is sticky-compact) */
+  padding-right: 0;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.tab-actions-off>.tab-actions {
+  /* don't allow tab actions to be clicked when running without tab actions */
+  pointer-events: none;
+}
+
+/* Breadcrumbs */
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control {
+  flex: 1 100%;
+  height: 22px;
+  cursor: default;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control .monaco-icon-label {
+  height: 22px;
+  line-height: 22px;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control .monaco-icon-label::before {
+  /* tweak the icon size of the editor labels when icons are enabled */
+  height: 22px;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control .outline-element-icon {
+  padding-right: 3px;
+  /* tweak the icon size of the editor labels when icons are enabled */
+  height: 22px;
+  line-height: 22px;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control .monaco-breadcrumb-item {
+  max-width: 80%;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control .monaco-breadcrumb-item::before {
+  width: 16px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control .monaco-breadcrumb-item:last-child {
+  padding-right: 8px;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-breadcrumbs .breadcrumbs-control .monaco-breadcrumb-item:last-child .codicon:last-child {
+  /* hides chevrons when last item */
+  display: none;
+}
+
+/* Editor Actions Toolbar */
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions {
+  cursor: default;
+  flex: initial;
+  padding: 0 8px 0 4px;
+  height: 35px;
+  /* FIXME: Although hiding the action toolbar is not the optimal solution, it is necessary as it obstructs the tabs view. */
+  display: none;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions .action-item {
+  margin-right: 4px;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title>.tabs-and-actions-container.wrapping .editor-actions {
+
+  /* When tabs are wrapped, position the editor actions at the end of the very last row */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.title.tabs.show-file-icons {
+  /* Although it is not officially documented by VS, we are able to set a margin on the right of the tab container using this method, which is not officially part of tabstitlecontrol.css. */
+  padding-right: 5px;
 }
