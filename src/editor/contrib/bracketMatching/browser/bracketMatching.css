@@ -1,0 +1,8 @@
+.monaco-editor .bracket-match {
+	box-sizing: border-box;
+	background-color: var(--vscode-editorBracketMatch-background);
+	border: 1px solid var(--vscode-editorBracketMatch-border);
+  /* We need a small amount of padding to account for the radius. */
+  padding: 4px !important;
+  border-radius: 4px !important;
+}
