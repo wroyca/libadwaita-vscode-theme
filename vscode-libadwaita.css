@@ -147,7 +147,19 @@ div.quick-input-widget
 {
   margin-top:    10%         !important;
   border:        0px solid;
-  border-radius: 10px        !important;                                   
+  border-radius: 10px        !important;
+  animation:     slide 167ms cubic-bezier(0, 0, 0, 1) forwards !important;
+}
+
+@keyframes slide {
+  0% {
+      transform: translateY(-25%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
 }
 
 div.quick-input-widget .quick-input-list                                    
