@@ -75,5 +75,6 @@
 
 .monaco-scrollable-element .scrollbar.horizontal .slider   
 {
-  height: 5px !important;                          
+  height: 5px !important;
+  margin-top: -2px !important;
 }
