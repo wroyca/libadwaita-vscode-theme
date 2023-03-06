@@ -3,6 +3,12 @@
   height: 80% !important;
 }
 
+.monaco-editor-pane-placeholder {
+  /* fix overflow with non-text placeholder pane */  
+  padding-top: 5%;
+  height: 100% !important;
+}
+
 /* Title Container */
 
 .monaco-workbench .part.editor>.content .editor-group-container>.title>.tabs-and-actions-container {
