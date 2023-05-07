@@ -1,5 +1,6 @@
 {
   "window.menuBarVisibility": "toggle",
+  "breadcrumbs.enabled": false,
   "vscode_custom_css.imports": [
     "file:///home/wroy/vscode-libadwaita/src/vs/workbench/browser/parts/editor/media/tabstitlecontrol.css",
     "file:///home/wroy/vscode-libadwaita/src/vs/editor/browser/viewParts/viewCursors/viewCursors.css",
