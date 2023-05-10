@@ -16,16 +16,15 @@ Upon successfully installing and configuring the "Custom CSS and JS Loader" exte
 
 
 1. Launch Visual Studio Code.
-2. Open the **Extensions** view by clicking on the square icon in the sidebar or by using the shortcut `Ctrl+Shift+X`.
-3. Search for and install the **Custom CSS and JS Loader** extension by **be5invis**.
-4. Once installed, open the **Command Palette** by pressing `Ctrl+Shift+P`.
-5. Select "Preferences: Open Workspace Settings" to open the workspace settings for your project.
-   - Alternatively, you can select "Preferences: Open User Settings" to modify the settings globally for all Visual Studio Code instance.
-6. In the workspace or user settings, add the following configuration to enable custom CSS loading:
+2. Select "Preferences: Open User Settings" to to modify the settings globally for all Visual Studio Code instance.
+3. In the workspace or user settings, add the following configuration to enable custom CSS loading:
 
 ```json
 "vscode_custom_css.imports": [
-  "file:///home/username/vscode-libadwaita/src/**/*.css"
+  "file:///home/username/libadwaita-vscode-theme/src/vs/workbench/browser/parts/editor/media/editorplaceholder.css",
+  "file:///home/username/libadwaita-vscode-theme/src/vs/workbench/browser/parts/editor/media/tabstitlecontrol.css",
+  "file:///home/username/libadwaita-vscode-theme/src/vs/workbench/contrib/interactiveEditor/browser/interactiveEditor.css",
+  "file:///home/username/libadwaita-vscode-theme/src/miscellaneous.css"
 ]
 ```
 

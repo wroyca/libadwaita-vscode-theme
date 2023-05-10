@@ -47,15 +47,7 @@
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title > .tabs-and-actions-container.tabs-border-bottom::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	z-index: 9;
-	pointer-events: none;
-	background-color: var(--tabs-border-bottom-color);
-	width: 100%;
-	height: 1px;
+	display: none; /* disabled by default. */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title > .tabs-and-actions-container > .monaco-scrollable-element {
@@ -73,6 +65,7 @@
 	display: flex;
 	height: 35px;
 	scrollbar-width: none; /* Firefox: hide scrollbar */
+	margin: 5px; /* additional margin to accomodate tabs border radius */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container.scroll {
@@ -95,11 +88,32 @@
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab {
 	position: relative;
 	display: flex;
+	flex-grow: 1; /* allows tabs to grow and occupy the remaining space within their flex container */
 	white-space: nowrap;
 	cursor: pointer;
 	height: 35px;
 	box-sizing: border-box;
 	padding-left: 10px;
+	margin-left: 5px; /* add a gaps between tabs */
+	border-radius: 6px;
+	border-right: 0 !important; /* ensure no border for every tab (#3) */
+	transition: all 0.2s ease-in-out;
+}
+
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:only-of-type {
+	display: none;
+}
+
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container:has(.tab):not(:has(.tab ~ .tab)) {
+	display: none;
+}
+
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:first-of-type {
+	padding-left: 5px !important;
+}
+
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:last-of-type {
+	padding-right: 5px !important;
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title > .tabs-and-actions-container.wrapping .tabs-container > .tab:last-child {
@@ -202,43 +216,32 @@
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-border-top-container,
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab > .tab-border-bottom-container {
-	display: none; /* hidden by default until a color is provided (see below) */
+	display: none; /* disabled by default */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.active.tab-border-top > .tab-border-top-container,
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.active.tab-border-bottom > .tab-border-bottom-container,
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.dirty-border-top > .tab-border-top-container {
-	display: block;
-	position: absolute;
-	left: 0;
-	pointer-events: none;
-	width: 100%;
+	display: none; /* disabled by default */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.active.tab-border-top > .tab-border-top-container {
-	z-index: 6;
-	top: 0;
-	height: 1px;
-	background-color: var(--tab-border-top-color);
+	display: none; /* disabled by default */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.active.tab-border-bottom > .tab-border-bottom-container {
-	z-index: 10;
-	bottom: 0;
-	height: 1px;
-	background-color: var(--tab-border-bottom-color);
+	display: none; /* disabled by default */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.dirty-border-top > .tab-border-top-container {
-	z-index: 6;
-	top: 0;
-	height: 2px;
-	background-color: var(--tab-dirty-border-top-color);
+	display: none; /* disabled by default */
 }
 
 /* Tab Label */
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab .tab-label {
+	flex: 0;
+	margin: 0 auto; /* aligns icon and label horizontally centered in the tab */
 	margin-top: auto;
 	margin-bottom: auto;
 	line-height: 35px; /* aligns icon and label vertically centered in the tab */
@@ -429,10 +432,7 @@
 /* Editor Actions Toolbar */
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .editor-actions {
-	cursor: default;
-	flex: initial;
-	padding: 0 8px 0 4px;
-	height: 35px;
+	display: none; /* disabled by default */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .editor-actions .action-item {

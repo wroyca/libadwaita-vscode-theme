@@ -4,13 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 .monaco-editor-pane-placeholder {
-	padding: 0 16px 0 16px;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 10px;
+	padding-top: 5%;
+	height: 100% !important;
 }
 
 .monaco-editor-pane-placeholder:focus {
