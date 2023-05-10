@@ -1,0 +1,93 @@
+{
+  "$schema": "vscode://schemas/color-theme",
+  "name": "Adwaita Dark",
+  "type": "light",
+  "colors": {
+    "activityBar.activeBackground": "#444342",
+    "activityBar.activeBorder": "#00000000",
+    "activityBar.background": "#303030",
+    "activityBar.border": "#171717",
+    "activityBarBadge.background": "#007acc",
+    "editor.background": "#17191a",
+    "editor.foreground": "#d2d2d2",
+    "editorGroup.border": "#222020",
+    "editorGroupHeader.border": "#222020",
+    "editorGroupHeader.tabsBackground": "#303030",
+    "focusBorder": "#00000000",
+    "list.activeSelectionBackground": "#444342",
+    "list.activeSelectionForeground": "#ffffff",
+    "list.hoverBackground": "#403f3e",
+    "list.inactiveSelectionBackground": "#444342",
+    "list.inactiveSelectionForeground": "#ffffff",
+    "panel.background": "#1d1d1d",
+    "panel.border": "#323130",
+    "panelTitle.activeBorder": "#c0bfbc",
+    "panelTitle.activeForeground": "#ffffff",
+    "scrollbar.shadow": "#000",
+    "sideBar.background": "#303030",
+    "sideBar.border": "#222020",
+    "sideBarSectionHeader.background": "#00000000",
+    "sideBarSectionHeader.border": "#222020",
+    "sideBarTitle.foreground": "#d2d2d2",
+    "statusBar.background": "#303030",
+    "statusBar.border": "#222020",
+    "statusBar.debuggingForeground": "#d2d2d2",
+    "statusBar.foreground": "#d2d2d2",
+    "statusBar.noFolderBackground": "#323130",
+    "statusBar.noFolderForeground": "#d2d2d2",
+    "statusBarItem.remoteBackground": "#323130",
+    "statusBarItem.remoteForeground": "#d2d2d2",
+    "tab.activeBackground": "#444444",
+    "tab.border": "#303030",
+    "tab.hoverBackground": "#3f3f3f",
+    "tab.inactiveBackground": "#303030",
+    "tab.unfocusedHoverBackground": "#3f3f3f",
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "source",
+      ],
+      "settings": {
+        "foreground": "#c4bfb8"
+      }
+    },
+    {
+      "scope": [
+        "comment"
+      ],
+      "settings": {
+        "foreground": "#a69f93",
+      }
+    },
+    {
+      "scope": [
+        "storage.type",
+        "storage.modifier",
+        "keyword",
+      ],
+      "settings": {
+        "foreground": "#f0c470",
+        "fontStyle": ""
+      }
+    },
+    {
+      "scope": [
+        "keyword.control",
+        "keyword.operator",
+        "constant"
+      ],
+      "settings": {
+        "foreground": "#c4bfb8",
+      }
+    },
+    {
+      "scope": [
+        "string",
+      ],
+      "settings": {
+        "foreground": "#bac172",
+      }
+    }
+  ]
+}

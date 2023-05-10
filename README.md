@@ -4,9 +4,10 @@
   </a>
   <br>
     Libadwaita
-  <br>
+  <br></br>
 </hi>
 
+![libadwaita](libadwaita.png)
 
 ## Getting Started 
 
@@ -31,6 +32,10 @@ Upon successfully installing and configuring the "Custom CSS and JS Loader" exte
 ## Credits
 
 We would like to acknowledge any contributors to this repository and those who may contribute in the future. Their hard work and dedication have been essential to the development of this project. Additionally, we extend our appreciation to the GNOME community for their ongoing support and development of the original design guidelines upon which this repository is based. Without their efforts, this project would not have been possible.
+
+## Bonus
+
+If you're searching for an excellent theme to use with this, I strongly suggest taking a look at [vscode-adwaita](https://github.com/piousdeer/vscode-adwaita.git) made by [@piousdeer](https://github.com/piousdeer)! Alternatively, you can use the colorscheme provided in the repository. Please be aware, however, that it was customized to match my preferences and is therefore highly opinionated.
 
 ## License
 
