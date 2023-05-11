@@ -130,3 +130,8 @@ div.explorer-viewlet div.pane-body
 {
   border-radius: 5px !important;
 }
+
+div[class^="cdr"]
+{
+  border-radius: 5px !important; 
+}
