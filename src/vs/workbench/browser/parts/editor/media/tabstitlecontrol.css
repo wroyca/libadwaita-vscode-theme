@@ -65,7 +65,7 @@
 	display: flex;
 	height: 35px;
 	scrollbar-width: none; /* Firefox: hide scrollbar */
-	margin: 5px; /* additional margin to accomodate tabs border radius */
+	margin: 5px 2.5px; /* additional margin to accomodate tabs border radius */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container.scroll {
@@ -94,10 +94,15 @@
 	height: 35px;
 	box-sizing: border-box;
 	padding-left: 10px;
-	margin-left: 5px; /* add a gaps between tabs */
+	margin: 0px 2.5px; /* add a gaps between tabs */
 	border-radius: 6px;
-	border-right: 0 !important; /* ensure no border for every tab (#3) */
+	border: none !important; /* ensure no border for every tab (#3) */
 	transition: all 0.2s ease-in-out;
+}
+
+/* enable to draw fine border around active tab (if user theme supports it) */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.active {
+	/* box-shadow: inset 0px 0px 0px .9px var(--tabs-border-bottom-color) !important; */
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:only-of-type {
@@ -108,21 +113,19 @@
 	display: none;
 }
 
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:first-of-type {
-	padding-left: 5px !important;
-}
-
-.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:last-of-type {
-	padding-right: 5px !important;
+.monaco-workbench .part.editor > .content .editor-group-container.active > .title .tabs-container > .tab:hover > .tab-actions .action-label {
+	border-radius: 50%;
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title > .tabs-and-actions-container.wrapping .tabs-container > .tab:last-child {
-	margin-right: var(--last-tab-margin-right); /* when tabs wrap, we need a margin away from the absolute positioned editor actions */
+	margin: 0px 2.5px;
 }
 
+/*
 .monaco-workbench .part.editor > .content .editor-group-container > .title > .tabs-and-actions-container.wrapping .tabs-container > .tab.last-in-row:not(:last-child) {
-	border-right: 0 !important; /* ensure no border for every last tab in a row except last row (#115046) */
+	border-right: 0 !important; ensure no border for every last tab in a row except last row (#115046)
 }
+*/
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.has-icon.tab-actions-right,
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.sizing-shrink.has-icon.tab-actions-off:not(.sticky-compact) {
