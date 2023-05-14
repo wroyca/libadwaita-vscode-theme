@@ -104,6 +104,19 @@ div.quick-input-widget .quick-input-header .monaco-inputbox.synthetic-focus
   background-color: unset !important;
 }
 
+/* Find (Ctrl-f) popup */
+.monaco-editor .find-widget {
+  border-radius: 0px 0px 6px 6px;
+}
+
+.monaco-editor .find-widget > .monaco-sash {
+  display: none;
+}
+
+.monaco-inputbox {  /* All input boxes */
+  border-radius: 4px !important;
+}
+
 div.explorer-viewlet div.pane-body 
 {
   padding-left:  10px !important;
