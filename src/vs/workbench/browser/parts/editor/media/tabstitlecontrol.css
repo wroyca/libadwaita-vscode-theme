@@ -100,6 +100,11 @@
 	transition: all 0.2s ease-in-out;
 }
 
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab:not(.active) 
+{
+	background: unset !important; /* Remove the background color from all tabs except the active one. */
+}
+
 /* enable to draw fine border around active tab (if user theme supports it) */
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab.active {
 	/* box-shadow: inset 0px 0px 0px .9px var(--tabs-border-bottom-color) !important; */
