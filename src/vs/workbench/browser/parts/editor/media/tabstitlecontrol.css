@@ -423,6 +423,8 @@
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-breadcrumbs .monaco-breadcrumbs {
 	min-height: 28px; /* this overrides the element style height-property */
+	border-radius: 6px;
+	width: 902px !important;
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-breadcrumbs .breadcrumbs-control .monaco-breadcrumb-item {
