@@ -120,7 +120,7 @@ div[class^="cdr"]
 }
 
 .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-breadcrumbs .monaco-breadcrumbs .monaco-breadcrumb-item .codicon-breadcrumb-separator:before {
-	content: '/' !important;
+    content: '/' !important;
     font-size: 13px;
     line-height: 36px;
     font-family: system-ui, Ubuntu, Droid Sans, sans-serif;
