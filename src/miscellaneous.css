@@ -110,3 +110,18 @@ div[class^="cdr"]
 {
   border-radius: 5px !important; 
 }
+
+/* custom breadcrumb separator in breadcrumbs container*/
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-breadcrumbs .monaco-breadcrumbs .monaco-breadcrumb-item .codicon-breadcrumb-separator {
+	color: inherit;
+	margin-left: 14px;
+	margin-right: 14px;
+	min-height: 36px;
+}
+
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-breadcrumbs .monaco-breadcrumbs .monaco-breadcrumb-item .codicon-breadcrumb-separator:before {
+	content: '/' !important;
+    font-size: 13px;
+    line-height: 36px;
+    font-family: system-ui, Ubuntu, Droid Sans, sans-serif;
+}
